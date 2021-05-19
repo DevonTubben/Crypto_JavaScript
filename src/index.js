@@ -1,24 +1,30 @@
 const BASE_URL = `https://api.coinlore.net/api/tickers/`
 
 
-
+// fetches data
 function fetchCoins() { 
 fetch(BASE_URL)
 .then(res => res.json())
-.then(console.log)
+.then(data => { 
+    console.log(data.data)
+    data.data.forEach(renderCoin)
+})
 
 
-}
+} 
+//renders a single coin to the page 
 
 function renderCoin(coin){ 
-const coinContainer = document.getElementById("coin-list")
-const litag = document.createElement('li')
-const imageTag = document.createElement('img')
-imageTag.src = coin.url
-const pTag = document.createElement('p')
-pTag.innerText = coin.name
-liTag.append(imageTag, pTag)
-coinContainer.appendChild(liTag)
-}
+const coinContainer = document.getElementById("Coin-List")
+const liTag = document.createElement('li')
 
-fetchCoins()
+liTag.innerText = coin.name
+coinContainer.appendChild(liTag)
+
+
+
+
+
+} 
+
+fetchCoins() 
