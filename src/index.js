@@ -18,7 +18,14 @@ function renderCoin(coin){
 const coinContainer = document.getElementById("Coin-List")
 const liTag = document.createElement('li')
 
-liTag.innerText = coin.name
+const aTag = document.createElement('a')
+aTag.href = '#' 
+aTag.innerText = coin.name
+
+liTag.appendChild(aTag)
+
+
+
 coinContainer.appendChild(liTag)
 
 
