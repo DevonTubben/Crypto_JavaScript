@@ -62,21 +62,25 @@ commentForm.addEventListener("submit", (e) => {
     e.target.reset()
 })
 
+const logInBtn = document.getElementById("login")
+logInBtn.addEventListener("click", logInPage)
+
+
 fetchCoins()
 fetchComments()
 
 }
 
 function fetchComments(){ 
-    fetch('http://localhost:3000/comments')
+    fetch(`http://localhost:3000/comments`)
     .then(res => res.json())
-    .then(comments => comments.forEach(comment) => { 
+    .then(comments => comments.forEach(comment => { 
         renderComment(comment.content)
     }))
 }
 
 
-function renderComment(){ 
+function renderComment(comment){ 
     const commentList = document.getElementById('comment-list')
     const li = document.createElement('li')
     li.innerText = comment
@@ -89,17 +93,41 @@ function postComment(comment){
 fetch(`http://localhost:3000/comments`, { 
     method: "POST",
     headers: { 
-        "content-type": "application/json",
+        "Content-type": "application/json",
         "Accept": "application/json" 
     },
     body: JSON.stringify({
         content: comment
+    })
     })   
-    }).then(res => res.json())
-    .then(console.log)
+}
+
+function logInPage(){ 
+    const mainContainer = document.getElementById("main")
+    mainContainer.innerHTML = ""
+
+   const logInForm = document.createElement('form')
+   logInForm.innerHTML += `
+   <label>Username</label>
+   input type="text"> 
+   <input type="Password"> 
+   <input type="submit">` 
+
+   logInForm.addEventListener("submit", logInUser)
+   mainContainer.append(logInForm)
+} 
+
+function logInUser(e){ 
+    e.preventDefault()
+    const username = e.target.children[1].value 
+    const password = e.target.children[3].value 
+    
+    console.log(username, password)
 }
 
 init()
+
+
 
 
 
