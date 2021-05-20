@@ -22,8 +22,10 @@ const aTag = document.createElement('a')
 aTag.href = '#' 
 aTag.innerText = coin.name
 
+
+
 aTag.addEventListener("click", () => { 
-    coinContainer.innerHTML = ""
+    coinContainer.innerHTML = " "
     const aTag = document.createElement('a')
     aTag.innerText = coin.name
     const allCoinsBtn = document.createElement('button')
@@ -34,7 +36,7 @@ aTag.addEventListener("click", () => {
         coinContainer.innerHTML = ' '
         fetchCoins()
     })
-    coinContainer.append(allCoinsBtn, aTag)
+    coinContainer.append(allCoinsBtn, " ", aTag)
 })
 
 liTag.appendChild(aTag)
@@ -45,5 +47,11 @@ coinContainer.appendChild(liTag)
 
 
 } 
+
+
+
+
+
+
 
 fetchCoins() 
