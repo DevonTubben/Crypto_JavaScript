@@ -48,8 +48,18 @@ coinContainer.appendChild(liTag)
 
 } 
 
+const commentForm = document.getElementById('comment-form')
+const commentInput = document.getElementById('comment-input')
+const commentList = document.getElementById('comment-list')
 
 
+commentForm.addEventListener("submit", (e) => { 
+    e.preventDefault()
+    const li = document.createElement('li')
+    li.innerText = commentInput.value
+    commentList.append(li)
+    e.target.reset()
+})
 
 
 
