@@ -65,7 +65,16 @@ commentForm.addEventListener("submit", (e) => {
 })
 
 fetchCoins()
+fetchComments()
+
 }
+
+function fetchComments(){ 
+    fetch('http://localhost:3000')
+    .then(res => res.json())
+    .then(console.log)
+}
+
 
 function postComment(comment){ 
 fetch(`http://localhost:3000`, { 
