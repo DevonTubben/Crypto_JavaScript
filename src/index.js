@@ -122,9 +122,16 @@ function logInUser(e){
     const username = e.target.children[1].value 
     const password = e.target.children[3].value 
     
-    console.log(username, password)
+    fetch(`http://localhost:3000/users?name=${username}&password=${password}`)
+    .then(res => res.json())
+    .then(data => { 
+        if(data.length === 0) { 
+            alert('Incorrect')
+        } else { 
+            console.log(`Welcome ${data[0].name}!`)
+        }
+    })
 }
-
 init()
 
 
