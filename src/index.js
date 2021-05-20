@@ -48,6 +48,8 @@ coinContainer.appendChild(liTag)
 
 } 
 
+
+function init(){ 
 const commentForm = document.getElementById('comment-form')
 const commentInput = document.getElementById('comment-input')
 const commentList = document.getElementById('comment-list')
@@ -58,8 +60,28 @@ commentForm.addEventListener("submit", (e) => {
     const li = document.createElement('li')
     li.innerText = commentInput.value
     commentList.append(li)
+    postComment(commentInput.value)
     e.target.reset()
 })
+
+fetchCoins()
+}
+
+function postComment(comment){ 
+fetch(`http://localhost:3000`, { 
+    method: "POST",
+    headers: { 
+        "content-type": "application/json",
+        "Accept": "application/json" 
+    },
+    body: JSON.stringify({
+        content: comment
+    })   
+    }).then(res => res.json())
+    .then(console.log)
+}
+
+init()
 
 
 
