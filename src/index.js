@@ -109,8 +109,9 @@ function logInPage(){
    const logInForm = document.createElement('form')
    logInForm.innerHTML += `
    <label>Username</label>
-   input type="text"> 
-   <input type=Password> 
+   <input type="text"> 
+   <label>Password</label> 
+   <input type="text">
    <input type="submit">` 
 
    logInForm.addEventListener("submit", logInUser)
