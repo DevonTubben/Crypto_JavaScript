@@ -110,7 +110,7 @@ function logInPage(){
    logInForm.innerHTML += `
    <label>Username</label>
    input type="text"> 
-   <input type="Password"> 
+   <input type=Password> 
    <input type="submit">` 
 
    logInForm.addEventListener("submit", logInUser)
@@ -135,11 +135,4 @@ function logInUser(e){
 init()
 
 
-
-
-
-
 fetchCoins() 
-const li = document.createElement('li')
-li.innerText = commentInput.value
-commentList.append(li)

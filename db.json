@@ -2,5 +2,14 @@
   "comments": [
     {  "id": 1, 
        "content": "some comment"}
-    ] 
+    ] , 
+    "users": [
+      { 
+      "id": 1, 
+      "name": "Devon", 
+      "password": "Javascript"
+      
+    }
+  ]
   }
+
