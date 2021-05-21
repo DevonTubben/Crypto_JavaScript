@@ -62,7 +62,7 @@ commentForm.addEventListener("submit", (e) => {
     e.target.reset()
 })
 
-const logInBtn = document.getElementById("login")
+const logInBtn = document.getElementById("log-in")
 logInBtn.addEventListener("click", logInPage)
 
 
