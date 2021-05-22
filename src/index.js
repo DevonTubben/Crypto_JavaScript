@@ -36,8 +36,8 @@ aTag.addEventListener("click", () => {
     
     const pTag = document.createElement('p')
     pTag.innerText = coin.price_usd
-   // const changeTag = document.createElement('change')
-   // const changeTag = coin.percent_change_24h
+    const changeTag = document.createElement('change')
+    changeTag.innerText = coin.percent_change_24h
 
 
     allCoinsBtn.addEventListener("click", () => { 
@@ -47,7 +47,7 @@ aTag.addEventListener("click", () => {
     coinContainer.append(allCoinsBtn, " ", aTag)
 
     coinContainer.append(aTag, pTag)
-   // coinContainer.append(pTag, changeTag)
+    coinContainer.append(pTag, changeTag)
     
 })
 
