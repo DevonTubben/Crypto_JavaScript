@@ -2,6 +2,7 @@ const BASE_URL = `https://api.coinlore.net/api/tickers/`
 
 
 // fetches data
+ 
 function fetchCoins() { 
 fetch(BASE_URL)
 .then(res => res.json())
@@ -32,11 +33,22 @@ aTag.addEventListener("click", () => {
     allCoinsBtn.innerText = "All Coins"
 
 
+    
+    const pTag = document.createElement('p')
+    pTag.innerText = coin.price_usd
+   // const changeTag = document.createElement('change')
+   // const changeTag = coin.percent_change_24h
+
+
     allCoinsBtn.addEventListener("click", () => { 
         coinContainer.innerHTML = ' '
         fetchCoins()
     })
     coinContainer.append(allCoinsBtn, " ", aTag)
+
+    coinContainer.append(aTag, pTag)
+   // coinContainer.append(pTag, changeTag)
+    
 })
 
 liTag.appendChild(aTag)
@@ -118,6 +130,8 @@ function logInPage(){
    mainContainer.append(logInForm)
 } 
 
+
+ 
 function logInUser(e){ 
     e.preventDefault()
     const username = e.target.children[1].value 
@@ -132,8 +146,8 @@ function logInUser(e){
             console.log(`Welcome ${data[0].name}!`)
         }
     })
+ 
 }
 init()
 
 
-fetchCoins() 
