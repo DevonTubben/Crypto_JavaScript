@@ -131,12 +131,6 @@ function logInPage(){
    mainContainer.append(logInForm)
 } 
 
-
-
-
-
-
- 
 function logInUser(e){ 
     e.preventDefault()
     const username = e.target.children[1].value 
@@ -152,6 +146,8 @@ function logInUser(e){
         }
     
     })
+
+    
  
 }
 init()
