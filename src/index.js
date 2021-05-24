@@ -47,29 +47,25 @@ aTag.addEventListener("click", () => {
         fetchCoins()
     })
     coinContainer.append(allCoinsBtn, " ", aTag)
-
     coinContainer.append(aTag, pTag)
     coinContainer.append(pTag, dayTag)
-    
     coinContainer.append(dayTag, " ", weekTag)
+
+    
     
 })
 
+
+
+
 liTag.appendChild(aTag)
-
-
-
-coinContainer.appendChild(liTag)
-
-
+ coinContainer.appendChild(liTag)
 } 
 
 
 function init(){ 
 const commentForm = document.getElementById('comment-form')
 const commentInput = document.getElementById('comment-input')
-
-
 
 commentForm.addEventListener("submit", (e) => { 
     e.preventDefault()
@@ -135,6 +131,10 @@ function logInPage(){
 } 
 
 
+
+
+
+
  
 function logInUser(e){ 
     e.preventDefault()
@@ -149,6 +149,7 @@ function logInUser(e){
         } else { 
             console.log(`Welcome ${data[0].name}!`)
         }
+    
     })
  
 }
