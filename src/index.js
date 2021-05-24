@@ -64,6 +64,7 @@ liTag.appendChild(aTag)
 
 
 function init(){ 
+
 const commentForm = document.getElementById('comment-form')
 const commentInput = document.getElementById('comment-input')
 
@@ -71,7 +72,7 @@ commentForm.addEventListener("submit", (e) => {
     e.preventDefault()
     const li = document.createElement('li')
     renderComment(commentInput.value)
-    e.target.reset()
+    e.target.reset() 
 })
 
 const logInBtn = document.getElementById("log-in")
