@@ -148,20 +148,15 @@ function logInUser(e){
     })
 
 
-
+const likeBtn = document.getElementById("likes")
 likeBtn.addEventListener("click", likeNum) 
 
 
 function likeNum(){
-    const foundLi = document.querySelector(`li[data-num="${counter.innerText}"]`)
-    if(!foundLi){
-        const li = document.createElement('li')
-        li.dataset.num = counter.innerText
-        li.innerHTML = `${counter.innerText} has been liked <span>1</span> times`
-        likesList.append(li)
-    } else {
-        foundLi.children[0].innerText = ++foundLi.children[0].innerText
-    }
+    const li = document.createElement('li')
+    ul.dataset.num = counter.innerText 
+    li.innerHTML = `${counter.innerText} has been liked <span>1</span> time`
+    likesList.appendChild('li')
 }
 
 
