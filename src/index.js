@@ -46,6 +46,8 @@ aTag.addEventListener("click", () => {
    symbolTag.innerText = coin.symbol
    const tsupplyTag = document.createElement('tsupply')
    tsupplyTag.innerText = coin.tsupply 
+   const marketcapTag = document.createElement('marketcap')
+   marketcapTag.innerText = coin.market_cap_usd
  
 
 
@@ -61,6 +63,7 @@ aTag.addEventListener("click", () => {
     coinContainer.append(dayTag," ", weekTag)
     coinContainer.append(weekTag," ", supplyTag)
     coinContainer.append(supplyTag, " ", tsupplyTag)
+    coinContainer.append(tsupplyTag, " ", marketcapTag)
     
 })
 
