@@ -29,29 +29,35 @@ aTag.addEventListener("click", () => {
     coinContainer.innerHTML = " "
     const aTag = document.createElement('a')
     aTag.innerText = coin.name
+    
     const allCoinsBtn = document.createElement('button')
     allCoinsBtn.innerText = "All Coins"
 
 
-    
-    const pTag = document.createElement('p')
+   const pTag = document.createElement('p')
     pTag.innerText = coin.price_usd
     const dayTag = document.createElement('day')
     dayTag.innerText = coin.percent_change_24h
     const weekTag = document.createElement('week')
-    weekTag.innerText = coin.percent_change_7d
+   weekTag.innerText = coin.percent_change_7d 
+   const supplyTag = document.createElement('suppy')
+   supplyTag.innerText = coin.msupply 
+   const symbolTag = document.createElement('symbol')
+   symbolTag.innerText = coin.symbol
+ 
 
 
     allCoinsBtn.addEventListener("click", () => { 
         coinContainer.innerHTML = ' '
         fetchCoins()
     })
-    coinContainer.append(allCoinsBtn, " ", aTag)
-    coinContainer.append(aTag, pTag)
-    coinContainer.append(pTag, dayTag)
-    coinContainer.append(dayTag, " ", weekTag)
-
-    
+    coinContainer.append(allCoinsBtn)
+    coinContainer.append(aTag)
+    coinContainer.append(aTag, " ", symbolTag)
+    coinContainer.append(pTag)
+    coinContainer.append(dayTag)
+    coinContainer.append(dayTag," ", weekTag)
+    coinContainer.append(weekTag," ", supplyTag)
     
 })
 
@@ -148,20 +154,21 @@ function logInUser(e){
     })
 
 
-const likeBtn = document.getElementById("likes")
-likeBtn.addEventListener("click", likeNum) 
+const likesBtn = document.getElementById("likes")
+
+likesBtn.addEventListener("click", likeNum) 
 
 
 function likeNum(){
     const li = document.createElement('li')
-    ul.dataset.num = counter.innerText 
+    li.dataset.num = counter.innerText 
     li.innerHTML = `${counter.innerText} has been liked <span>1</span> time`
     likesList.appendChild('li')
+
 }
 
 
 
 
- 
 }
 init()
