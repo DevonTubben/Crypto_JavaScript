@@ -2,3 +2,13 @@ body {
     background-color: powderblue;
   }
  
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 12px;
+    margin-inline-end: 12px;
+    padding-inline-start: 80px;
+}
+  
