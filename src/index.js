@@ -44,6 +44,8 @@ aTag.addEventListener("click", () => {
    supplyTag.innerText = coin.msupply 
    const symbolTag = document.createElement('symbol')
    symbolTag.innerText = coin.symbol
+   const tsupplyTag = document.createElement('tsupply')
+   tsupplyTag.innerText = coin.tsupply 
  
 
 
@@ -58,6 +60,7 @@ aTag.addEventListener("click", () => {
     coinContainer.append(dayTag)
     coinContainer.append(dayTag," ", weekTag)
     coinContainer.append(weekTag," ", supplyTag)
+    coinContainer.append(supplyTag, " ", tsupplyTag)
     
 })
 
