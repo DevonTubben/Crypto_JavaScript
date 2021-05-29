@@ -12,6 +12,31 @@ fetch(BASE_URL)
 })
 
 
+const likesBtn = document.getElementById("likes")
+const dislikesBtn = document.getElementById("dislikes")
+likesBtn.addEventListener("click", likeNum) 
+dislikesBtn.addEventListener("click", dislikeNum)
+
+
+
+function likeNum(){
+    const li = document.createElement('li')
+    li.dataset.num = counter.innerText 
+    li.innerHTML = `${counter.innerText} has been liked <span>1</span> time`
+    likesList.appendChild('li') 
+
+}
+function dislikeNum(){
+    const li = document.createElement('li')
+    li.dataset.num = counter.innerText 
+    li.innerHTML = `${counter.innerText} has been disliked <span>1</span> time`
+    dislikesList.appendChild('li') 
+
+}
+
+
+
+
 } 
 //renders a single coin to the page 
 
@@ -158,23 +183,6 @@ function logInUser(e){
         }
     
     })
-
-
-const likesBtn = document.getElementById("likes")
-
-likesBtn.addEventListener("click", likeNum) 
-
-
-function likeNum(){
-    const li = document.createElement('li')
-    li.dataset.num = counter.innerText 
-    li.innerHTML = `${counter.innerText} has been liked <span>1</span> time`
-    likesList.appendChild('li')
-
-}
-
-
-
 
 }
 init()
