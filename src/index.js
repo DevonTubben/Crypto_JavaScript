@@ -11,6 +11,9 @@ fetch(BASE_URL)
     data.data.forEach(renderCoin)
 })
 
+const counter = document.getElementById("counter")
+const likesList = document.querySelector(".likes")
+const dislikesList = document.querySelector(".likes")
 
 const likesBtn = document.getElementById("likes")
 const dislikesBtn = document.getElementById("dislikes")
