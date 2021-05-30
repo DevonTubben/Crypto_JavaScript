@@ -25,15 +25,15 @@ dislikesBtn.addEventListener("click", dislikeNum)
 function likeNum(){
     const li = document.createElement('li')
     li.dataset.num = counter.innerText 
-    li.innerHTML = `${counter.innerText} has been liked <span>1</span> time`
-    likesList.appendChild('li') 
+    li.innerHTML = `${counter.innerText} This market has been liked <span>1</span> time`
+    likesList.appendChild(li, li) 
 
 }
 function dislikeNum(){
     const li = document.createElement('li')
     li.dataset.num = counter.innerText 
-    li.innerHTML = `${counter.innerText} has been disliked <span>1</span> time`
-    dislikesList.appendChild('li') 
+    li.innerHTML = `${counter.innerText} This market has been disliked <span>1</span> time`
+    dislikesList.appendChild(li, li) 
 
 }
 
