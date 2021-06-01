@@ -1,5 +1,5 @@
 # Crypto_JavaScript
-# #Short Description:
+# Short Description:
 A way to learn about some of the most popular Cryptocurrencies where you can see the name, symbol, price, 1 & 7 day price gain by percentage, total coin supply, circulating supply, and market cap for each individual coin. You can leave comments where it can be a sort of forum to dicuss your thoughts on the market and also has a like and dislike button to let people give their feeling towards the market currently. 
 
 # Open index:
