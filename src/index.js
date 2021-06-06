@@ -61,37 +61,40 @@ aTag.addEventListener("click", () => {
     const allCoinsBtn = document.createElement('button')
     allCoinsBtn.innerText = "All Coins"
 
+   let price = document.createElement("p")
+   let day = document.createElement("p")
+   let week = document.createElement("p")
+   let symbol = document.createElement("p")
+   let supply = document.createElement("p")
+   let cirSupply = document.createElement("p")
+   let marketcap = document.createElement("p")
+   
 
-   const pTag = document.createElement('p')
-    pTag.innerText = coin.price_usd
-    const dayTag = document.createElement('day')
-    dayTag.innerText = coin.percent_change_24h
-    const weekTag = document.createElement('week')
-   weekTag.innerText = coin.percent_change_7d 
-   const supplyTag = document.createElement('suppy')
-   supplyTag.innerText = coin.msupply 
-   const symbolTag = document.createElement('symbol')
-   symbolTag.innerText = coin.symbol
-   const tsupplyTag = document.createElement('tsupply')
-   tsupplyTag.innerText = coin.tsupply 
-   const marketcapTag = document.createElement('marketcap')
-   marketcapTag.innerText = coin.market_cap_usd
+   price.innerHTML = coin.price_usd 
+   day.innerHTML = coin.percent_change_24h 
+   week.innerText = coin.percent_change_7d 
+   symbol.innerText = coin.symbol 
+   supply.innerText = coin.msupply 
+   cirsupply = coin.tsupply 
+   marketcap.innerText = coin.market_cap_usd
+
  
-
+ 
+   
 
     allCoinsBtn.addEventListener("click", () => { 
         coinContainer.innerHTML = ' '
         fetchCoins()
     })
-    coinContainer.append(allCoinsBtn)
-    coinContainer.append(aTag)
-    coinContainer.append(aTag, " ", symbolTag)
-    coinContainer.append(pTag)
-    coinContainer.append(dayTag)
-    coinContainer.append(dayTag," ", weekTag)
-    coinContainer.append(weekTag," ", supplyTag)
-    coinContainer.append(supplyTag, " ", tsupplyTag)
-    coinContainer.append(tsupplyTag, " ", marketcapTag)
+
+    coinContainer.appendChild(aTag)
+    coinContainer.appendChild(symbol)
+    coinContainer.appendChild(price)
+    coinContainer.appendChild(day)
+    coinContainer.appendChild(week)
+    coinContainer.appendChild(supply)
+    coinContainer.appendChild(cirSupply)
+    coinContainer.appendChild(marketcap)
     
 })
 
