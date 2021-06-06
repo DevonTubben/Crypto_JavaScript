@@ -68,15 +68,21 @@ aTag.addEventListener("click", () => {
    let supply = document.createElement("p")
    let cirSupply = document.createElement("p")
    let marketcap = document.createElement("p")
-   
+   let rank = document.createElement("p")
+   let hour = document.createElement("p")
+   let volume = document.createElement("p")
 
-   price.innerHTML = coin.price_usd 
-   day.innerHTML = coin.percent_change_24h 
+
+   price.innerText = coin.price_usd 
+   day.innerText = coin.percent_change_24h 
    week.innerText = coin.percent_change_7d 
    symbol.innerText = coin.symbol 
    supply.innerText = coin.msupply 
-   cirsupply = coin.tsupply 
+   cirSupply.innerText = coin.tsupply 
    marketcap.innerText = coin.market_cap_usd
+   rank.innerText = coin.rank 
+   hour.innerText = coin.percent_change_1h
+   volume.innerText = coin.volume24
 
  
  
@@ -87,14 +93,18 @@ aTag.addEventListener("click", () => {
         fetchCoins()
     })
 
+    coinContainer.appendChild(allCoinsBtn)
     coinContainer.appendChild(aTag)
     coinContainer.appendChild(symbol)
     coinContainer.appendChild(price)
+    coinContainer.appendChild(rank)
+    coinContainer.appendChild(hour)
     coinContainer.appendChild(day)
     coinContainer.appendChild(week)
     coinContainer.appendChild(supply)
     coinContainer.appendChild(cirSupply)
     coinContainer.appendChild(marketcap)
+    coinContainer.appendChild(volume)
     
 })
 
