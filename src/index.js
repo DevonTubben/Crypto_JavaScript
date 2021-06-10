@@ -46,7 +46,6 @@ aTag.href = '#'
 aTag.innerText = coin.name
 
 
-
 aTag.addEventListener("click", () => { 
     coinContainer.innerHTML = " "
     const aTag = document.createElement('a')
