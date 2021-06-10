@@ -1,6 +1,5 @@
 const BASE_URL = `https://api.coinlore.net/api/tickers/`
 
-
 // fetches data
  
 function fetchCoins() { 
@@ -21,7 +20,6 @@ likesBtn.addEventListener("click", likeNum)
 dislikesBtn.addEventListener("click", dislikeNum)
 
 
-
 function likeNum(){
     const li = document.createElement('li')
     li.dataset.num = counter.innerText 
@@ -35,11 +33,7 @@ function dislikeNum(){
     li.innerHTML = `${counter.innerText} This market has been disliked <span>1</span> time`
     dislikesList.appendChild(li, li) 
 
-}
-
-
-
-
+ }
 } 
 //renders a single coin to the page 
 
@@ -85,10 +79,6 @@ aTag.addEventListener("click", () => {
    hour.innerText = coin.percent_change_1h
    volume.innerText = coin.volume24
 
- 
- 
-   
-
     allCoinsBtn.addEventListener("click", () => { 
         coinContainer.innerHTML = ' '
         fetchCoins()
@@ -105,17 +95,12 @@ aTag.addEventListener("click", () => {
     coinContainer.appendChild(supply)
     coinContainer.appendChild(cirSupply)
     coinContainer.appendChild(marketcap)
-    coinContainer.appendChild(volume)
-    
+    coinContainer.appendChild(volume)  
 })
-
-
-
 
 liTag.appendChild(aTag)
  coinContainer.appendChild(liTag)
 } 
-
 
 function init(){ 
 
@@ -132,10 +117,8 @@ commentForm.addEventListener("submit", (e) => {
 const logInBtn = document.getElementById("log-in")
 logInBtn.addEventListener("click", logInPage)
 
-
 fetchCoins()
 fetchComments()
-
 }
 
 function fetchComments(){ 
@@ -146,15 +129,12 @@ function fetchComments(){
     }))
 }
 
-
 function renderComment(comment){ 
     const commentList = document.getElementById('comment-list')
     const li = document.createElement('li')
     li.innerText = comment
     commentList.append(li)
 }
-
-
 
 function postComment(comment){ 
 fetch(`http://localhost:3000/comments`, { 
