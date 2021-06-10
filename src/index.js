@@ -61,18 +61,19 @@ aTag.addEventListener("click", () => {
     const allCoinsBtn = document.createElement('button')
     allCoinsBtn.innerText = "All Coins"
 
-   let price = document.createElement("p")
-   let day = document.createElement("p")
-   let week = document.createElement("p")
-   let symbol = document.createElement("p")
-   let supply = document.createElement("p")
-   let cirSupply = document.createElement("p")
-   let marketcap = document.createElement("p")
-   let rank = document.createElement("p")
-   let hour = document.createElement("p")
-   let volume = document.createElement("p")
+   
+   const price = document.createElement("p")
+   const day = document.createElement("p")
+   const week = document.createElement("p")
+   const symbol = document.createElement("p")
+   const supply = document.createElement("p")
+   const cirSupply = document.createElement("p")
+   const marketcap = document.createElement("p")
+   const rank = document.createElement("p")
+   const hour = document.createElement("p")
+   const volume = document.createElement("p")
 
-
+   
    price.innerText = coin.price_usd 
    day.innerText = coin.percent_change_24h 
    week.innerText = coin.percent_change_7d 
