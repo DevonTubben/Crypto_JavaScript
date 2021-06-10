@@ -6,7 +6,6 @@ function fetchCoins() {
 fetch(BASE_URL)
 .then(res => res.json())
 .then(data => { 
-    console.log(data.data)
     data.data.forEach(renderCoin)
 })
 
@@ -50,6 +49,7 @@ aTag.addEventListener("click", () => {
     coinContainer.innerHTML = " "
     const aTag = document.createElement('a')
     aTag.innerText = coin.name
+
     
     const allCoinsBtn = document.createElement('button')
     allCoinsBtn.innerText = "All Coins"
@@ -78,23 +78,23 @@ aTag.addEventListener("click", () => {
    hour.innerText = coin.percent_change_1h
    volume.innerText = coin.volume24
 
-    allCoinsBtn.addEventListener("click", () => { 
-        coinContainer.innerHTML = ' '
-        fetchCoins()
+   allCoinsBtn.addEventListener("click", () => { 
+    coinContainer.innerHTML = ' '
+    fetchCoins()
     })
 
-    coinContainer.appendChild(allCoinsBtn)
-    coinContainer.appendChild(aTag)
-    coinContainer.appendChild(symbol)
-    coinContainer.appendChild(price)
-    coinContainer.appendChild(rank)
-    coinContainer.appendChild(hour)
-    coinContainer.appendChild(day)
-    coinContainer.appendChild(week)
-    coinContainer.appendChild(supply)
-    coinContainer.appendChild(cirSupply)
-    coinContainer.appendChild(marketcap)
-    coinContainer.appendChild(volume)  
+    coinContainer.append(allCoinsBtn)
+    coinContainer.append(aTag)
+    coinContainer.append(symbol)
+    coinContainer.append(price)
+    coinContainer.append(rank)
+    coinContainer.append(hour)
+    coinContainer.append(day)
+    coinContainer.append(week)
+    coinContainer.append(supply)
+    coinContainer.append(cirSupply)
+    coinContainer.append(marketcap)
+    coinContainer.append(volume)  
 })
 
 liTag.appendChild(aTag)
@@ -102,7 +102,6 @@ liTag.appendChild(aTag)
 } 
 
 function init(){ 
-
 const commentForm = document.getElementById('comment-form')
 const commentInput = document.getElementById('comment-input')
 
@@ -112,7 +111,6 @@ commentForm.addEventListener("submit", (e) => {
     renderComment(commentInput.value)
     e.target.reset() 
 })
-
 const logInBtn = document.getElementById("log-in")
 logInBtn.addEventListener("click", logInPage)
 
