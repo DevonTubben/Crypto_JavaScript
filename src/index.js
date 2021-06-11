@@ -1,6 +1,4 @@
 const BASE_URL = `https://api.coinlore.net/api/tickers/`
-
-// fetches data
  
 function fetchCoins() { 
 fetch(BASE_URL)
@@ -31,15 +29,12 @@ function dislikeNum(){
     li.dataset.num = counter.innerText 
     li.innerHTML = `${counter.innerText} This market has been disliked <span>1</span> time`
     dislikesList.appendChild(li, li) 
-
  }
 } 
-//renders a single coin to the page 
 
 function renderCoin(coin){ 
 const coinContainer = document.getElementById("Coin-List")
 const liTag = document.createElement('li')
-
 const aTag = document.createElement('a')
 aTag.href = '#' 
 aTag.innerText = coin.name
