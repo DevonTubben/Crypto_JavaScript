@@ -2,14 +2,6 @@
   "comments": [
     {  "id": 1, 
        "content":"Cryptocurrency market is up today" }
-    ] , 
-    "users": [
-      { 
-      "id": 1, 
-      "name": "Devon", 
-      "password": "Javascript"
-      
-    }
-  ]
+    ] 
   }
 

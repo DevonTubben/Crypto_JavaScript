@@ -106,9 +106,6 @@ commentForm.addEventListener("submit", (e) => {
     renderComment(commentInput.value)
     e.target.reset() 
 })
-const logInBtn = document.getElementById("log-in")
-logInBtn.addEventListener("click", logInPage)
-
 fetchCoins()
 fetchComments()
 }
@@ -141,37 +138,8 @@ fetch(`http://localhost:3000/comments`, {
     })   
 }
 
-function logInPage(){ 
-    const mainContainer = document.getElementById("main")
-    mainContainer.innerHTML = ""
-
-   const logInForm = document.createElement('form')
-   logInForm.innerHTML += `
-   <label>Username</label>
-   <input type="text"> 
-   <label>Password</label> 
-   <input type="text">
-   <input type="submit">` 
-
-   logInForm.addEventListener("submit", logInUser)
-   mainContainer.append(logInForm)
-} 
-
-function logInUser(e){ 
-    e.preventDefault()
-    const username = e.target.children[1].value 
-    const password = e.target.children[3].value 
     
-    fetch(`http://localhost:3000/users?name=${username}&password=${password}`)
-    .then(res => res.json())
-    .then(data => { 
-        if(data.length === 0) { 
-            alert('Incorrect')
-        } else { 
-            console.log(`Welcome ${data[0].name}!`)
-        }
-    
-    })
 
-}
+
+
 init()
