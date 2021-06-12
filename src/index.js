@@ -164,20 +164,20 @@ init()
 const BASE_URL = `https://api.coinlore.net/api/tickers/`
  
 function fetchCoins() { 
-fetch(BASE_URL)
-.then(res => res.json())
-.then(data => { 
+    fetch(BASE_URL)
+    .then(res => res.json())
+    .then(data => { 
     data.data.forEach(renderCoin)
 })
 
-const counter = document.getElementById("counter")
-const likesList = document.querySelector(".likes")
-const dislikesList = document.querySelector(".likes")
+    const counter = document.getElementById("counter")
+    const likesList = document.querySelector(".likes")
+    const dislikesList = document.querySelector(".likes")
 
-const likesBtn = document.getElementById("likes")
-const dislikesBtn = document.getElementById("dislikes")
-likesBtn.addEventListener("click", likeNum) 
-dislikesBtn.addEventListener("click", dislikeNum)
+    const likesBtn = document.getElementById("likes")
+    const dislikesBtn = document.getElementById("dislikes")
+    likesBtn.addEventListener("click", likeNum) 
+    dislikesBtn.addEventListener("click", dislikeNum)
 
 
 function likeNum(){
@@ -196,11 +196,11 @@ function dislikeNum(){
 } 
 
 function renderCoin(coin){ 
-const coinContainer = document.getElementById("Coin-List")
-const liTag = document.createElement('li')
-const aTag = document.createElement('a')
-aTag.href = '#' 
-aTag.innerText = coin.name
+    const coinContainer = document.getElementById("Coin-List")
+    const liTag = document.createElement('li')
+    const aTag = document.createElement('a')
+    aTag.href = '#' 
+    aTag.innerText = coin.name
 
 
 aTag.addEventListener("click", () => { 
@@ -256,12 +256,12 @@ aTag.addEventListener("click", () => {
 })
 
 liTag.appendChild(aTag)
- coinContainer.appendChild(liTag)
+    coinContainer.appendChild(liTag)
 } 
 
 function init(){ 
-const commentForm = document.getElementById('comment-form')
-const commentInput = document.getElementById('comment-input')
+    const commentForm = document.getElementById('comment-form')
+    const commentInput = document.getElementById('comment-input')
 
 commentForm.addEventListener("submit", (e) => { 
     e.preventDefault()
@@ -300,9 +300,5 @@ fetch(`http://localhost:3000/comments`, {
     })
     })   
 }
-
-    
-
-
 
 init()
