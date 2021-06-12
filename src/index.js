@@ -163,6 +163,14 @@ init()
 */ 
 const BASE_URL = `https://api.coinlore.net/api/tickers/`
  
+function getCoins(){ 
+    const loadBtn = document.getElementById("load")
+    loadBtn.addEventListener("click", () => { 
+   fetchCoins()
+    })
+}
+    getCoins()
+
 function fetchCoins() { 
     fetch(BASE_URL)
     .then(res => res.json())
@@ -269,7 +277,7 @@ commentForm.addEventListener("submit", (e) => {
     renderComment(commentInput.value)
     e.target.reset() 
 })
-fetchCoins()
+//fetchCoins()
 fetchComments()
 }
 
