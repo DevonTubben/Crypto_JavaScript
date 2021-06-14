@@ -1,9 +1,3 @@
-//Re-organize/re-factor code (don't forget to intend, etc)
-//Get the fetch working with the load button
-//make a little video articulating in detail what you had to change to get it working and the idea
-//behind your organization scheme 
-//DOM content loaded vs using init? Maybe just check out what DOM content loaded does, and include that in your video
-//just so I know you know what it is
 document.addEventListener('DOMContentLoaded', function(){
 
 const BASE_URL = `https://api.coinlore.net/api/tickers/`
