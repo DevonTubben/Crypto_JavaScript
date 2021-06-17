@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 const aTag = document.createElement('a')
                 aTag.innerText = coin.name
 
-
                 const allCoinsBtn = document.createElement('button')
                 allCoinsBtn.innerText = "All Coins"
 
