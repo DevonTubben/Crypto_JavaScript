@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             fetchCoins()
         })
     }
+
     getCoins()
 
     function fetchCoins() {
@@ -16,18 +17,16 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 data.data.forEach(renderCoin)
             })
-
-        marketSentiment()
+    
         commentSection()
-
+    
         function renderCoin(coin) {
             const coinContainer = document.getElementById("Coin-List")
             const liTag = document.createElement('li')
             const aTag = document.createElement('a')
             aTag.href = '#'
             aTag.innerText = coin.name
-
-
+        
             aTag.addEventListener("click", () => {
                 coinContainer.innerHTML = " "
                 const aTag = document.createElement('a')
@@ -36,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const allCoinsBtn = document.createElement('button')
                 allCoinsBtn.innerText = "All Coins"
-
 
                 const price = document.createElement("p")
                 const day = document.createElement("p")
@@ -48,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 const rank = document.createElement("p")
                 const hour = document.createElement("p")
                 const volume = document.createElement("p")
-
 
                 price.innerText = `Price: ${coin.price_usd}`
                 day.innerText = `24 Hour % change: ${coin.percent_change_24h}`
@@ -65,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     coinContainer.innerHTML = ' '
                     fetchCoins()
                 })
-
                 coinContainer.append(allCoinsBtn)
                 coinContainer.append(aTag)
                 coinContainer.append(symbol)
@@ -79,15 +75,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 coinContainer.append(marketcap)
                 coinContainer.append(volume)
             })
-
             liTag.appendChild(aTag)
             coinContainer.appendChild(liTag)
         }
-
         function commentSection() {
             const commentForm = document.getElementById('comment-form')
             const commentInput = document.getElementById('comment-input')
-
+        
             commentForm.addEventListener("submit", (e) => {
                 e.preventDefault()
                 const li = document.createElement('li')
@@ -125,8 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
             fetchComments()
         }
     }
-
-    function marketSentiment() {
         const counter = document.getElementById("counter")
         const likesList = document.querySelector(".likes")
         const dislikesList = document.querySelector(".likes")
@@ -135,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const dislikesBtn = document.getElementById("dislikes")
         likesBtn.addEventListener("click", likeNum)
         dislikesBtn.addEventListener("click", dislikeNum)
-
+    
 
         function likeNum() {
             const li = document.createElement('li')
@@ -150,5 +142,4 @@ document.addEventListener('DOMContentLoaded', function () {
             li.innerHTML = `${counter.innerText} This market has been disliked <span>1</span> time`
             dislikesList.appendChild(li, li)
         }
-    }
 })
