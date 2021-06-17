@@ -128,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
         likesBtn.addEventListener("click", likeNum)
         dislikesBtn.addEventListener("click", dislikeNum)
     
-
         function likeNum() {
             const li = document.createElement('li')
             li.dataset.num = counter.innerText
